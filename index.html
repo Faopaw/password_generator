@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+      </style>
+    <title>Vite + TS</title>
+  </head>
+  <body class="noto-sans-font">
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <main>
+      <h1>Password Generator</h1>
+      <div class="password noto-sans-font">
+        <input type="text" placeholder="Password" class="noto-sans-font"/>
+        <button>Copy</button>
+      </div>
+      <div class="range">
+        <input
+          type="range"
+          name="rangename"
+          id="rangeid"
+          min="6"
+          max="24"
+          value="8"
+        />
+        <span>8</span>
+      </div>
+      <div class="options">
+        <div class="option">
+          <label>
+            <input type="checkbox" id="cbidlower" />
+            <span>a-z</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" id="cbidupper" />
+            <span>A-Z</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" id="cbidnumber" />
+            <span>0-9</span>
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="checkbox" id="cbidspecials" />
+            <span>!@$#%^</span>
+          </label>
+        </div>
+        <button class="generate">Generate</button>
+      </div>
+    </main>
+  </body>
+</html>
