@@ -1,0 +1,1 @@
+This is a small project intended only to hone my craft. The password generator is not a truly random number generator, but it is using a pseudo-random number generator seeded with a value with enough entropy to be suitable for cryptographic purposes.
