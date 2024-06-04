@@ -112,6 +112,7 @@ h1 {
 
 .estimation {
   margin-top: 0.4rem;
+  font-weight: bold;
   margin-bottom: 0.1rem;
   color: red;
   text-align: left;
@@ -120,6 +121,7 @@ h1 {
 
 .estimation-weak {
   margin-top: 0.4rem;
+  font-weight: bold;
   margin-bottom: 0.1rem;
   color: orangered;
   text-align: left;
@@ -128,6 +130,8 @@ h1 {
 
 .estimation-medium {
   margin-top: 0.4rem;
+  font-weight: bold;
+
   margin-bottom: 0.1rem;
   color: orange;
   text-align: left;
@@ -136,8 +140,10 @@ h1 {
 
 .estimation-strong {
   margin-top: 0.4rem;
+  font-weight: bold;
+
   margin-bottom: 0.1rem;
-  color: green;
+  color: rgb(0, 193, 0);
   text-align: left;
   padding-top: 0.1rem;
 }
