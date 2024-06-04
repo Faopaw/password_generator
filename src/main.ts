@@ -1,4 +1,5 @@
 import "./style.css";
+import { passwordStrength } from "check-password-strength";
 
 export default function csprngp(length: number): string[] {
   const randomValues = new Uint8Array(length);
@@ -10,6 +11,10 @@ export default function csprngp(length: number): string[] {
 function uint8ArrayToStringArray(uint8Array: Uint8Array): string[] {
   return Array.from(uint8Array, (byte) => String.fromCharCode(byte));
 }
+
+let estimation = document.querySelector(
+  "p.estimation"
+)! as HTMLParagraphElement;
 
 function generate_password(): undefined {
   // fill the dictionary depending on what boxes are checked
@@ -78,6 +83,57 @@ function generate_password(): undefined {
   (document.querySelector('input[type="text"]')! as HTMLInputElement).value =
     password;
 
+  let strengthValue = passwordStrength(password).value;
+
+  if (strengthValue === "Too weak") {
+    estimation.textContent = "";
+    estimation.textContent = "Too Weak";
+    estimation.classList.remove(
+      "estimation",
+      "estimation-weak",
+      "estimation-medium",
+      "estimation-strong"
+    );
+    estimation.classList.add("estimation");
+  }
+
+  if (strengthValue == "Weak") {
+    estimation.textContent = "";
+    estimation.textContent = "Weak";
+    estimation.classList.remove(
+      "estimation",
+      "estimation-weak",
+      "estimation-medium",
+      "estimation-strong"
+    );
+    estimation.classList.add("estimation-weak");
+  }
+
+  if (strengthValue == "Medium") {
+    estimation.textContent = "";
+    estimation.textContent = "Medium";
+    estimation.classList.remove(
+      "estimation",
+      "estimation-weak",
+      "estimation-medium",
+      "estimation-strong"
+    );
+    estimation.classList.add("estimation-medium");
+  }
+
+  if (strengthValue == "Strong") {
+    estimation.textContent = "";
+    estimation.textContent = "Strong";
+    estimation.classList.remove(
+      "estimation",
+      "estimation-weak",
+      "estimation-medium",
+      "estimation-strong"
+    );
+    estimation.classList.add("estimation-strong");
+  }
+
+  estimation.textContent = passwordStrength(password).value;
   return undefined;
 }
 
